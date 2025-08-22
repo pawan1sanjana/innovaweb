@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Innova - OUSL Agri Innovations Hub</title>
+  <meta name="description" content="Revolutionary voice-controlled mocktail machine from Innova - OUSL Agri Innovations Hub">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%234F46E5'/><text x='50' y='58' text-anchor='middle' font-family='Arial' font-size='40' font-weight='bold' fill='white'>M</text></svg>">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Gradient text animation */
+    .gradient-text {
+      background: linear-gradient(45deg, #0ea5e9, #6366f1, #8b5cf6);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient 3s ease infinite;
+    }
+
+    @keyframes gradient {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dark .glass-card {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-slate-900 transition-all duration-500">
+
+  <!-- Page Loader -->
+  <div id="pageLoader"
+    class="fixed inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 flex flex-col items-center justify-center z-50">
+    <div class="text-6xl font-black text-white gradient-text mb-6 animate-pulse">Innova OUSL</div>
+    <div class="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mb-4"></div>
+    <div class="text-white text-lg opacity-80">Loading...</div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-40 glass-card backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <div class="flex items-center gap-4">
+        <img src="images/ousl-logo.png" alt="OUSL Logo"
+          class="w-[160px] h-auto object-contain drop-shadow-md">
+        <img src="images/innova-logo.png" alt="Innova Logo"
+          class="w-[80px] h-auto object-contain drop-shadow-md">
+        <div>
+          <h1 class="text-xl font-bold gradient-text">Mixify</h1>
+          <p class="text-xs text-gray-600 dark:text-gray-400">by The Open University of Sri Lanka</p>
+        </div>
+      </div>
+      <div class="flex gap-6">
+        <a href="#home"
+          class="hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-gray-300 font-medium transition-colors">Home</a>
+        <a href="#innovations"
+          class="hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-gray-300 font-medium transition-colors">Innovations</a>
+        <a href="#about"
+          class="hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-gray-300 font-medium transition-colors">About</a>
+        <a href="#contact"
+          class="hover:text-blue-600 dark:hover:text-blue-400 text-gray-700 dark:text-gray-300 font-medium transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Floating circles -->
+    <div class="absolute inset-0">
+      <div class="absolute top-20 left-10 w-64 h-64 bg-gradient-to-tr from-blue-200 to-purple-200 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+      <div class="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-tr from-purple-200 to-pink-200 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+    </div>
+    <div
+      class="max-w-7xl mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
+      <div class="animate-on-scroll">
+        <h1 class="text-6xl md:text-7xl font-bold gradient-text mb-4">INNOVA</h1>
+        <h2 class="text-2xl md:text-3xl font-light text-gray-800 dark:text-gray-200 mb-6">Revolutionizing Food Innovation</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 mb-10">Powered by
+          <span class="font-semibold text-yellow-500">Agrits Society</span> - Leading the future of agricultural
+          engineering and food technology</p>
+        <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+          <a href="#innovations"
+            class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-md hover:scale-105 transition-transform">Explore Innovations</a>
+          <a href="#about"
+            class="border-2 border-gray-800 dark:border-white text-gray-800 dark:text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition">Learn
+            More</a>
+        </div>
+      </div>
+      <div class="animate-on-scroll delay-200">
+        <img src="images/home.png" alt="Innovation"
+          class="rounded-3xl shadow-2xl w-full h-auto">
+      </div>
+    </div>
+  </section>
+
+
+  
+<!-- Innovation Categories Section -->
+<section id="innovations" class="py-20 bg-gray-50 dark:bg-gray-900 theme-transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 animate-on-scroll" style="animation-delay:100ms;">
+            <h2 class="text-5xl font-bold gradient-text mb-4">Innovation Categories</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Discover groundbreaking innovations across five key categories, each representing excellence in food technology and agricultural engineering
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Best Process -->
+<div class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 relative overflow-hidden group theme-transition">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+    <div class="relative z-10">
+        
+        <!-- Icon + Title in Flex -->
+        <div class="flex items-center gap-3 mb-6">
+            <!-- Icon -->
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Mixify</h3>
+        </div>
+
+        <!-- Small Image -->
+        <img src="images/mixify.png" alt="Mixify Machine" 
+             class="w-40 h-40 object-contain mx-auto mb-4 rounded-lg shadow-md">
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+            A Novel Beverage Experience!!! Voice-controlled mocktail machine that crafts perfect drinks with just your voice
+        </p>
+
+<button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold shadow-lg hover:from-blue-600 hover:to-blue-800 transition-all duration-300">
+    Learn More →
+</button>
+    </div>
+</div>
+
+
+                    <!-- Commercial Viable Product -->
+<div class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 relative overflow-hidden group theme-transition">
+    <!-- Hover Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+    
+    <div class="relative z-10">
+        <!-- Icon + Title -->
+        <div class="flex items-center gap-3 mb-6">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Bio Nas</h3>
+        </div>
+
+        <!-- Small Image -->
+        <img src="images/bionas.jpg" alt="Bio Nas Beverage" 
+             class="w-40 h-40 object-contain mx-auto mb-4 rounded-lg shadow-md">
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+            A Natural Detox Beverage, made from pineapple peel extract, Bio Nas is rich in antioxidants, eco-innovative, sugar-free, and refreshingly light.
+        </p>
+
+        <!-- Gradient Button -->
+        <button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold shadow-lg hover:from-green-600 hover:to-green-800 transition-all duration-300">
+            Learn More →
+        </button>
+    </div>
+</div>
+
+
+                    <!-- Best Innovation -->
+<div class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 relative overflow-hidden group theme-transition">
+    <!-- Hover Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-500 to-purple-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+    
+    <div class="relative z-10">
+        <!-- Icon + Title -->
+        <div class="flex items-center gap-3 mb-6">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">CoCoWeL</h3>
+        </div>
+
+        <!-- Small Image -->
+        <img src="images/wel-jelly.jpg" alt="Best Innovation" 
+             class="w-40 h-40 object-contain mx-auto mb-4 rounded-lg shadow-md">
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+            The Herbal Dessert Revolution, Creamy Jelly Pudding Blended with Welpenala & Coconut – A Balanced, Nourishing, Energy-Boosting Treat
+        </p>
+
+        <!-- Gradient Button -->
+        <button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-purple-500 to-purple-700 text-white font-semibold shadow-lg hover:from-purple-600 hover:to-purple-800 transition-all duration-300">
+            Learn More →
+        </button>
+    </div>
+</div>
+
+
+                    <!-- Best Economical Product -->
+                   <div class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 relative overflow-hidden group theme-transition">
+    <!-- Hover Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-yellow-500 to-orange-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+    
+    <div class="relative z-10">
+        <!-- Icon + Title -->
+        <div class="flex items-center gap-3 mb-6">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Bio Berry</h3>
+        </div>
+
+        <!-- Small Image -->
+        <img src="images/bioberry.jpg" alt="Best Economical Product" 
+             class="w-40 h-40 object-contain mx-auto mb-4 rounded-lg shadow-md">
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Probiotic Preservation for Strawberries, Fresh, Safe & Probiotic-Rich Strawberries – Naturally Preserved with Lactobacillus Solution
+        </p>
+
+        <!-- Gradient Button -->
+        <button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-600 text-white font-semibold shadow-lg hover:from-yellow-600 hover:to-orange-700 transition-all duration-300">
+            Learn More →
+        </button>
+    </div>
+</div>
+
+
+
+
+                    <!-- Best Packaging -->
+<div class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 relative overflow-hidden group theme-transition">
+    <!-- Hover Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-pink-500 to-red-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+    
+    <div class="relative z-10">
+        <!-- Icon + Title -->
+        <div class="flex items-center gap-3 mb-6">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-pink-100 dark:bg-pink-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-pink-600 dark:text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7m16-2V7a2 2 0 00-2-2H6a2 2 0 00-2 2v3m16 0l-8 5-8-5"></path>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">ProBeads</h3>
+        </div>
+
+        <!-- Small Image -->
+        <img src="images/probeads.jpg" alt="Best Packaging" 
+             class="w-40 h-40 object-contain mx-auto mb-4 rounded-lg shadow-md">
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Your Gut’s Best Ally, Encapsulated Probiotic Supplement – delivering billions of live cultures safely to your intestines for better digestion, mood, and immunity.
+        </p>
+
+        <!-- Gradient Button -->
+        <button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-red-600 text-white font-semibold shadow-lg hover:from-pink-600 hover:to-red-700 transition-all duration-300">
+            Learn More →
+        </button>
+    </div>
+</div>
+
+
+<!-- Best Process -->
+<div class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 relative overflow-hidden group theme-transition">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+    <div class="relative z-10">
+        
+        <!-- Icon + Title in Flex -->
+        <div class="flex items-center gap-3 mb-6">
+            <!-- Icon -->
+            <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Greeny Magic</h3>
+        </div>
+
+        <!-- Small Image -->
+        <img src="images/greenymagic.jpg" alt="Mixify Machine" 
+             class="w-40 h-40 object-contain mx-auto mb-4 rounded-lg shadow-md">
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+            The Green Pudding Experience, A wellness pudding made from Thebu (Costus speciosus) leaves, blended with coconut milk & kithul starch. A refreshing blend of tradition and innovation — nourishing, affordable, and delicious!
+        </p>
+
+<button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold shadow-lg hover:from-blue-600 hover:to-blue-800 transition-all duration-300">
+    Learn More →
+</button>
+    </div>
+</div>
+
+
+                    <!-- Commercial Viable Product -->
+<div class="card-hover bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 relative overflow-hidden group theme-transition">
+    <!-- Hover Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-green-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+    
+    <div class="relative z-10">
+        <!-- Icon + Title -->
+        <div class="flex items-center gap-3 mb-6">
+            <!-- Icon -->
+            <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <svg class="w-7 h-7 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                </svg>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Yo’s Go</h3>
+        </div>
+
+        <!-- Small Image -->
+        <img src="images/yosgo.jpg" alt="Bio Nas Beverage" 
+             class="w-40 h-40 object-contain mx-auto mb-4 rounded-lg shadow-md">
+
+        <!-- Description -->
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+           A Novel Dairy Experience, Full Meal Creamy Dairy Beverage – A Nutritious, Energy-Rich Balanced Diet
+        </p>
+
+        <!-- Gradient Button -->
+        <button class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold shadow-lg hover:from-green-600 hover:to-green-800 transition-all duration-300">
+            Learn More →
+        </button>
+    </div>
+</div>
+
+        
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-20 bg-white dark:bg-gray-800 theme-transition">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animate-on-scroll" style="animation-delay:100ms;">
+            <h2 class="text-4xl font-bold gradient-text mb-4">About INNOVA</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                INNOVA is the flagship innovation platform by the Agrits Society at OUSL, dedicated to fostering creativity and excellence in food technology and agricultural engineering.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="flex flex-col items-center md:items-start animate-on-scroll" style="animation-delay:200ms;">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Innovation" class="rounded-2xl shadow-lg mb-6 w-full max-w-xs">
+                <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Our Vision</h3>
+                <p class="text-gray-600 dark:text-gray-300">To be the leading hub for food innovation in Sri Lanka, inspiring the next generation of agri-tech leaders.</p>
+            </div>
+            <div class="flex flex-col items-center md:items-start animate-on-scroll" style="animation-delay:400ms;">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Teamwork" class="rounded-2xl shadow-lg mb-6 w-full max-w-xs">
+                <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2">Our Approach</h3>
+                <p class="text-gray-600 dark:text-gray-300">We blend academic excellence with hands-on experience, encouraging collaboration, experimentation, and entrepreneurship among our members.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50 dark:bg-gray-900 theme-transition">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 animate-on-scroll" style="animation-delay:100ms;">
+            <h2 class="text-4xl font-bold gradient-text mb-4">Contact Us</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">Have questions or want to collaborate? Reach out to the INNOVA team!</p>
+        </div>
+        <form class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 grid grid-cols-1 gap-6 animate-on-scroll" style="animation-delay:200ms;">
+            <input type="text" placeholder="Your Name" class="p-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="email" placeholder="Your Email" class="p-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <textarea placeholder="Your Message" rows="4" class="p-4 rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <button type="submit" class="glow-effect bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold py-3 px-8 rounded-full hover:scale-105 transition-transform duration-300">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+        <div class="border-t border-gray-700 pt-8">
+            <p class="text-gray-400">&copy; 2025 Innova Department of Agricultural & Plantational Engineering OUSL. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-400 text-sm">&copy; 2025 Innova Department of Agricultural & Plantational Engineering
+        OUSL. All rights reserved.</p>
+      <div class="flex gap-4 text-xl">
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Loader
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('pageLoader').style.display = 'none';
+      }, 1200);
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

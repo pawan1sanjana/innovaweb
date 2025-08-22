@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Yo’s Go | OUSL Agri Innovations Hub</title>
+  <meta name="description" content="Yo’s Go - A Novel Dairy Experience | Full Meal Creamy Dairy Beverage from innOUva - OUSL Agri Innovations Hub">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="56x56" href="images/icon.png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary': {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e'
+            },
+            'accent': {
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca'
+            }
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.6s ease-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'slide-in-left': 'slideInLeft 0.8s ease-out',
+            'slide-in-right': 'slideInRight 0.8s ease-out',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s infinite'
+          },
+          keyframes: {
+            fadeIn: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            slideUp: { '0%': { opacity: '0', transform: 'translateY(50px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            slideInLeft: { '0%': { opacity: '0', transform: 'translateX(-100px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+            slideInRight: { '0%': { opacity: '0', transform: 'translateX(100px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+            float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-20px)' } }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .gradient-text {
+      background: linear-gradient(45deg, #0ea5e9, #6366f1, #8b5cf6);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradient 3s ease infinite;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .dark .glass-card {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    [data-theme="dark"] { color-scheme: dark; }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-slate-900 transition-all duration-500">
+
+<!-- Page Loader -->
+<div id="pageLoader" class="fixed inset-0 bg-gray-500 flex flex-col items-center justify-center z-50 transition-all duration-500">
+    <div class="text-6xl font-black text-white gradient-text mb-6 animate-pulse">
+        Innova OUSL
+    </div>
+    <div class="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mb-4"></div>
+    <div class="text-white text-lg opacity-80">Loading...</div>
+</div>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-40 glass-card">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-4">
+          <img src="images/ousl-logo.png" alt="OUSL Logo" class="w-[200px] h-auto object-contain rounded-lg shadow-md">
+          <img src="images/innova-logo.png" alt="innOUva Logo" class="w-[100px] h-auto object-contain rounded-lg shadow-md">
+          <div>
+            <h1 class="text-xl font-bold gradient-text">Yo’s Go</h1>
+            <p class="text-xs text-gray-600 dark:text-gray-400">by The Open University of Sri Lanka</p>
+          </div>
+        </div>
+        <div class="hidden md:flex space-x-8">
+          <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium">Home</a>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Theme Toggle -->
+  <button id="themeToggle" class="fixed top-4 right-4 z-50 glass-card px-4 py-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-black/20 flex items-center space-x-2">
+    <span id="themeIcon" class="text-lg">🌙</span>
+  </button>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-float"></div>
+      <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
+    </div>
+    <div class="container mx-auto px-4 text-center relative z-10">
+      <div class="max-w-4xl mx-auto animate-fade-in">
+        <h1 class="text-6xl md:text-8xl font-black gradient-text mb-6 animate-slide-up">Yo’s Go</h1>
+        <p class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-4">A Novel Dairy Experience</p>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">Full Meal Creamy Dairy Beverage – A Nutritious, Energy-Rich Balanced Diet</p>
+        <a href="#product-overview" class="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300"> Discover More <i class="fas fa-arrow-right ml-2"></i> </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Overview -->
+  <section id="product-overview" class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-12">
+      <div class="lg:w-1/2">
+        <h2 class="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Product Overview</h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">This innovative drinking yogurt combines the creamy texture of traditional yogurt with the unique chewiness of <b>cassava sago pearls (Manihot esculenta)</b>. Naturally thickened and probiotic-rich, Yo’s Go is designed for a superior sensory experience while offering wholesome nutrition.</p>
+      </div>
+      <div class="lg:w-1/2 flex justify-center">
+        <img src="images/yosgo.jpg" alt="Yo’s Go Product" class="rounded-3xl shadow-2xl w-full max-w-md object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="py-16 bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 text-white">Key Benefits</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="benefit-card bg-gray-700/80 p-6 rounded-xl shadow-md text-white">
+          <h3 class="font-semibold text-xl mb-2">Complete Meal in a Bottle</h3>
+          <p>Provides protein from milk and energy-rich carbs from cassava sago pearls.</p>
+        </div>
+        <div class="benefit-card bg-gray-700/80 p-6 rounded-xl shadow-md text-white">
+          <h3 class="font-semibold text-xl mb-2">Probiotic-Rich</h3>
+          <p>Supports gut health, boosts immunity, and is a source of calcium and vitamins.</p>
+        </div>
+        <div class="benefit-card bg-gray-700/80 p-6 rounded-xl shadow-md text-white">
+          <h3 class="font-semibold text-xl mb-2">Gluten-Free & Natural</h3>
+          <p>Suitable for diverse dietary needs without compromising taste or nutrition.</p>
+        </div>
+        <div class="benefit-card bg-gray-700/80 p-6 rounded-xl shadow-md text-white">
+          <h3 class="font-semibold text-xl mb-2">Affordable & Energy-Dense</h3>
+          <p>Ideal as a breakfast replacement beverage—nourishing and budget-friendly.</p>
+        </div>
+        <div class="benefit-card bg-gray-700/80 p-6 rounded-xl shadow-md text-white">
+          <h3 class="font-semibold text-xl mb-2">Consumer-Preferred Formula</h3>
+          <p>Sensory trials revealed the 3% sago formulation had the highest acceptance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Advantages -->
+  <section id="advantages" class="py-16 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-12 text-white">Advantages</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="advantage-card p-6 bg-gray-800/80 rounded-xl shadow-md text-white">
+          <h3 class="text-xl font-semibold mb-2">Affordable Product</h3>
+          <p>Uses cassava, a low-cost carbohydrate source, making it accessible to all.</p>
+        </div>
+        <div class="advantage-card p-6 bg-gray-800/80 rounded-xl shadow-md text-white">
+          <h3 class="text-xl font-semibold mb-2">Sustainable & Local</h3>
+          <p>Supports food security and promotes local agriculture with cassava utilization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ingredients & Label -->
+  <section id="ingredients" class="py-16 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-6 lg:px-20">
+      <h2 class="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Ingredients & Label</h2>
+      <ul class="list-disc pl-6 text-gray-700 dark:text-gray-300 space-y-2 mb-6">
+        <li>Fresh Cow’s Milk (3.5% fat)</li>
+        <li>Cassava Sago Pearls</li>
+        <li>Starter Cultures</li>
+        <li>Strawberry Flavoring</li>
+        <li>Sugar</li>
+      </ul>
+
+    
+
+      <p class="italic text-gray-500 dark:text-gray-400">A refreshing blend of tradition and innovation — nourishing, affordable, and delicious!</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-800 dark:bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold gradient-text mb-2">Yo’s Go</h3>
+      <p class="text-gray-400 mb-4">The future of nutritious dairy beverages</p>
+      <div class="border-t border-gray-700 pt-8">
+        <p class="text-gray-400">&copy; 2025 innOUva Department of Agricultural & Plantation Engineering OUSL. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+
+  // Loader
+  window.addEventListener('load', function() {
+    document.getElementById('pageLoader').style.display = 'none';
+  });
+
+  // Dark Mode
+  let isDark = localStorage.getItem('darkMode') === 'true';
+  if (isDark) document.documentElement.classList.add('dark');
+</script>
+
+</body>
+</html>
