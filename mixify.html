@@ -1,115 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Mixify | OUSL Agri Innovations Hub</title>
-    <meta name="description" content="Revolutionary voice-controlled mocktail machine from Innova - OUSL Agri Innovations Hub">
+    <meta name="description"
+        content="Revolutionary voice-controlled mocktail machine from Innova - OUSL Agri Innovations Hub">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="Images/png" sizes="56x56" href="Images/icon.png">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="56x56" href="images/icon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="loader.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            900: '#0c4a6e'
-                        },
-                        'accent': {
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca'
-                        }
+                        primary: '#0ea5e9',
+                        secondary: '#6366f1',
                     },
-animation: {
-                        'fade-in': 'fadeIn 0.6s ease-out',
-                        'slide-up': 'slideUp 0.6s ease-out',
-                        'slide-in-left': 'slideInLeft 0.8s ease-out',
-                        'slide-in-right': 'slideInRight 0.8s ease-out',
-                        'bounce-slow': 'bounce 3s infinite',
-                        'pulse-slow': 'pulse 3s infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'gradient': 'gradient 3s ease infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                        'wave': 'wave 2s ease-in-out infinite',
-                        'wiggle': 'wiggle 1s ease-in-out infinite',
-                        'zoom-in': 'zoomIn 0.6s ease-out',
-                        'typing': 'typing 4s steps(30, end), blink 0.75s step-end infinite',
-                        'particle-float': 'particleFloat 4s ease-in-out infinite',
-                        'number-counter': 'numberCounter 2s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(50px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-100px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' }
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(100px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' }
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' }
-                        },
-                        gradient: {
-                            '0%, 100%': { backgroundPosition: '0% 50%' },
-                            '50%': { backgroundPosition: '100% 50%' }
-                        },
-                        glow: {
-                            '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
-                            '100%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' }
-                        },
-                        wave: {
-                            '0%, 100%': { transform: 'rotate(0deg)' },
-                            '50%': { transform: 'rotate(5deg)' }
-                        },
-                        wiggle: {
-                            '0%, 100%': { transform: 'rotate(-3deg)' },
-                            '50%': { transform: 'rotate(3deg)' }
-                        },
-                        zoomIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.5)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' }
-                        },
-                        typing: {
-                            '0%': { width: '0' },
-                            '100%': { width: '100%' }
-                        },
-                        blink: {
-                            '0%, 50%': { borderColor: 'transparent' },
-                            '51%, 100%': { borderColor: 'white' }
-                        },
-                        particleFloat: {
-                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)', opacity: '0.7' },
-                            '33%': { transform: 'translateY(-30px) rotate(120deg)', opacity: '1' },
-                            '66%': { transform: 'translateY(-15px) rotate(240deg)', opacity: '0.8' }
-                        },
-                        numberCounter: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' }
-                        }
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
                     }
                 }
             }
@@ -117,79 +40,84 @@ animation: {
     </script>
 
     <style>
-        .gradient-text {
-            background: linear-gradient(45deg, #0ea5e9, #6366f1, #8b5cf6);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradient 3s ease infinite;
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .dark .glass-card {
-            background: rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        [data-theme="dark"] {
-            color-scheme: dark;
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
-<body class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-slate-900 transition-all duration-500">
-    
-<!-- Page Loader -->
-<div id="pageLoader" class="fixed inset-0 bg-gray-500 flex flex-col items-center justify-center z-50 transition-all duration-500">
-    <div class="text-6xl font-black text-white gradient-text mb-6 animate-pulse">
-        Innova OUSL
-    </div>
-    <div class="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mb-4"></div>
-    <div class="text-white text-lg opacity-80">Loading...</div>
-</div>
+<body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-x-hidden">
 
-
-<!-- Navigation -->
-<nav class="fixed top-0 w-full z-40 glass-card">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="flex items-center justify-between h-16">
-            
-            <!-- Left Section: Logos + Title -->
-            <div class="flex items-center space-x-4">
-                
-
-<!-- University Logo -->
-<img src="images/ousl-logo.png" alt="OUSL Logo" 
-     class="w-[200px] h-auto object-contain rounded-lg shadow-md">
-
-<!-- Innova Logo -->
-<img src="images/innova-logo.png" alt="Innova Logo" 
-     class="w-[100px] h-auto object-contain rounded-lg shadow-md">
-
-                <!-- Brand Text -->
-                <div>
-                    <h1 class="text-xl font-bold gradient-text">Mixify</h1>
-                    <p class="text-xs text-gray-600 dark:text-gray-400">by The Open University of Sri Lanka</p>
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 px-4 py-4" id="main-nav">
+        <div class="max-w-7xl mx-auto">
+            <nav
+                class="premium-glass rounded-2xl md:rounded-full px-6 py-3 flex items-center justify-between shadow-lg">
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <div class="relative">
+                            <img src="images/ousl-logo.png" alt="OUSL" class="h-10 w-auto object-contain">
+                            <div
+                                class="absolute -inset-2 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                            </div>
+                        </div>
+                        <div class="hidden sm:block border-l border-slate-300 dark:border-slate-700 h-8 mx-1"></div>
+                        <img src="images/logo-black.png" alt="Innova"
+                            class="h-8 w-auto object-contain hidden sm:block dark:hidden">
+                        <img src="images/innova-logo.png" alt="Innova"
+                            class="h-8 w-auto object-contain hidden dark:sm:block">
+                        <div class="flex flex-col">
+                            <span class="text-xl font-bold premium-gradient-text">INNOVA</span>
+                            <span
+                                class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-semibold leading-none">OUSL
+                                Agri Hub</span>
+                        </div>
+                    </a>
                 </div>
-            </div>
-            
-            <!-- Right Section: Nav Links -->
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium">Home</a>
-            </div>
+
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="index.html"
+                        class="text-sm font-medium hover:text-primary transition-colors dark:text-slate-300">Home</a>
+                    <a href="index.html#innovations"
+                        class="text-sm font-medium hover:text-primary transition-colors dark:text-slate-300">Innovations</a>
+
+                    <div class="h-4 w-px bg-slate-200 dark:bg-slate-800"></div>
+
+                    <div id="themeToggle" class="theme-switch" aria-label="Toggle Theme">
+                        <div class="theme-switch-thumb">
+                            <i class="fas fa-sun dark:hidden"></i>
+                            <i class="fas fa-moon hidden dark:inline"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <div class="flex items-center gap-4 md:hidden">
+                    <div id="mobileThemeToggle" class="theme-switch" aria-label="Toggle Theme">
+                        <div class="theme-switch-thumb">
+                            <i class="fas fa-sun dark:hidden"></i>
+                            <i class="fas fa-moon hidden dark:inline"></i>
+                        </div>
+                    </div>
+                    <a href="index.html" class="p-2 text-xl" aria-label="Home">
+                        <i class="fas fa-house"></i>
+                    </a>
+                </div>
+            </nav>
         </div>
-    </div>
-</nav>
+    </header>
 
 
     <!-- Theme Toggle -->
-    <button id="themeToggle" class="fixed top-4 right-4 z-50 glass-card px-4 py-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-200 flex items-center space-x-2">
+    <button id="themeToggle"
+        class="fixed top-4 right-4 z-50 glass-card px-4 py-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-200 flex items-center space-x-2">
         <span id="themeIcon" class="text-lg">🌙</span>
         <span id="themeText" class="text-sm font-medium"></span>
     </button>
@@ -199,22 +127,29 @@ animation: {
         <!-- Animated Background Elements -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-indigo-400/20 rounded-full blur-3xl animate-float"
+                style="animation-delay: -3s;"></div>
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-pulse-slow">
+            </div>
         </div>
-        
+
         <div class="container mx-auto px-4 text-center relative z-10">
             <div class="max-w-4xl mx-auto animate-fade-in">
                 <h1 class="text-6xl md:text-8xl font-black gradient-text mb-6 animate-slide-up">
                     Mixify
                 </h1>
-                <p class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-4 animate-fade-in" style="animation-delay: 0.2s;">
+                <p class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-4 animate-fade-in"
+                    style="animation-delay: 0.2s;">
                     A Novel Beverage Experience
                 </p>
-                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.4s;">
+                <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto animate-fade-in"
+                    style="animation-delay: 0.4s;">
                     Voice-controlled mocktail machine that crafts perfect drinks with just your voice
                 </p>
-                <a href="#features" class="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-fade-in" style="animation-delay: 0.6s;">
+                <a href="#features"
+                    class="inline-block bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 animate-fade-in"
+                    style="animation-delay: 0.6s;">
                     Discover More
                     <i class="fas fa-arrow-right ml-2"></i>
                 </a>
@@ -223,66 +158,77 @@ animation: {
     </section>
 
 
-<section id="products" class="py-16 bg-gray-50 dark:bg-gray-900">
-  <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center lg:items-start lg:gap-x-16">
-    
-    <!-- Product Image Card -->
-    <div class="flex justify-center lg:justify-start mb-10 lg:mb-0 lg:w-5/12">
-      <div class="relative group w-96 h-96 rounded-3xl glass-card flex flex-col items-center justify-center transform transition-all duration-500 hover:scale-105 hover:rotate-2 shadow-2xl">
-        
-        <!-- Product Image -->
-        <img src="images/mixify.png" alt="Mixify Machine" class="w-48 h-48 object-contain z-10">
-        
-        <!-- Product Title & Description -->
-        <h3 class="text-3xl font-bold text-gray-800 dark:text-white mt-4 z-10 text-center">Mixify Machine</h3>
-        <p class="text-gray-600 dark:text-gray-400 z-10 text-center">Voice-Controlled Perfection</p>
-        
-        <!-- Glow Effect -->
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-indigo-400/30 rounded-3xl blur-xl -z-10 group-hover:blur-2xl transition-all duration-500"></div>
-      </div>
-    </div>
-    
-    <!-- Product Features -->
-    <div class="space-y-6 lg:w-7/12">
-      
-      <!-- Voice Recognition Feature -->
-      <div class="glass-card p-6 rounded-2xl hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-300 transform hover:-translate-y-2 group flex items-start space-x-4">
-        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">🎤</div>
-        <div>
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Voice Recognition</h3>
-          <p class="text-gray-600 dark:text-gray-400">Advanced AI understands natural speech patterns and responds to your beverage requests instantly</p>
-        </div>
-      </div>
-      
-      <!-- 20+ Recipes Feature -->
-      <div class="glass-card p-6 rounded-2xl hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-300 transform hover:-translate-y-2 group flex items-start space-x-4">
-        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">📱</div>
-        <div>
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">20+ Recipes</h3>
-          <p class="text-gray-600 dark:text-gray-400">Pre-programmed mocktails with endless customization options to suit your taste preferences</p>
-        </div>
-      </div>
-      
-      <!-- Precision Dispensing Feature -->
-      <div class="glass-card p-6 rounded-2xl hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-300 transform hover:-translate-y-2 group flex items-start space-x-4">
-        <div class="text-3xl group-hover:scale-110 transition-transform duration-300">⚖️</div>
-        <div>
-          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Precision Dispensing</h3>
-          <p class="text-gray-600 dark:text-gray-400">Automated measurement and mixing system ensures consistent quality and perfect ratios every time</p>
-        </div>
-      </div>
-      
-    </div>
-    
-  </div>
-</section>
+    <section id="products" class="py-16 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center lg:items-start lg:gap-x-16">
 
-    
-    
+            <!-- Product Image Card -->
+            <div class="flex justify-center lg:justify-start mb-10 lg:mb-0 lg:w-5/12">
+                <div
+                    class="relative group w-96 h-96 rounded-3xl glass-card flex flex-col items-center justify-center transform transition-all duration-500 hover:scale-105 hover:rotate-2 shadow-2xl">
+
+                    <!-- Product Image -->
+                    <img src="images/mixify.png" alt="Mixify Machine" class="w-48 h-48 object-contain z-10">
+
+                    <!-- Product Title & Description -->
+                    <h3 class="text-3xl font-bold text-gray-800 dark:text-white mt-4 z-10 text-center">Mixify Machine
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-400 z-10 text-center">Voice-Controlled Perfection</p>
+
+                    <!-- Glow Effect -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-indigo-400/30 rounded-3xl blur-xl -z-10 group-hover:blur-2xl transition-all duration-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Features -->
+            <div class="space-y-6 lg:w-7/12">
+
+                <!-- Voice Recognition Feature -->
+                <div
+                    class="glass-card p-6 rounded-2xl hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-300 transform hover:-translate-y-2 group flex items-start space-x-4">
+                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300">🎤</div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Voice Recognition</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Advanced AI understands natural speech patterns and
+                            responds to your beverage requests instantly</p>
+                    </div>
+                </div>
+
+                <!-- 20+ Recipes Feature -->
+                <div
+                    class="glass-card p-6 rounded-2xl hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-300 transform hover:-translate-y-2 group flex items-start space-x-4">
+                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300">📱</div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">20+ Recipes</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Pre-programmed mocktails with endless customization
+                            options to suit your taste preferences</p>
+                    </div>
+                </div>
+
+                <!-- Precision Dispensing Feature -->
+                <div
+                    class="glass-card p-6 rounded-2xl hover:bg-white/20 dark:hover:bg-black/20 transition-all duration-300 transform hover:-translate-y-2 group flex items-start space-x-4">
+                    <div class="text-3xl group-hover:scale-110 transition-transform duration-300">⚖️</div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">Precision Dispensing</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Automated measurement and mixing system ensures
+                            consistent quality and perfect ratios every time</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
 
 
     <!-- Features Section -->
-    <section id="features" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-slate-900">
+    <section id="features"
+        class="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-slate-900">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-5xl font-bold text-gray-800 dark:text-white mb-4">
@@ -290,55 +236,79 @@ animation: {
                 </h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto"></div>
             </div>
-            
+
             <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto">
                 <!-- Feature Cards -->
-                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group">
-                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🎯</div>
+                <div
+                    class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group">
+                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🎯
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Convenience & Ease</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Voice activation removes the need for manual inputs, making operation simple for any user.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Voice activation removes the need for
+                        manual inputs, making operation simple for any user.</p>
                 </div>
-                
-                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group" style="animation-delay: 0.1s;">
-                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">⚡</div>
+
+                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group"
+                    style="animation-delay: 0.1s;">
+                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">⚡
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Speed & Efficiency</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Rapid preparation ensures reduced wait times, ideal for home use and events.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Rapid preparation ensures reduced wait
+                        times, ideal for home use and events.</p>
                 </div>
-                
-                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group" style="animation-delay: 0.2s;">
-                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🎯</div>
+
+                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group"
+                    style="animation-delay: 0.2s;">
+                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🎯
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Consistent Quality</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Automated ingredient measurement guarantees uniform taste and presentation.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Automated ingredient measurement
+                        guarantees uniform taste and presentation.</p>
                 </div>
-                
-                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group" style="animation-delay: 0.3s;">
-                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">✨</div>
+
+                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group"
+                    style="animation-delay: 0.3s;">
+                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">✨
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Engaging Experience</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Interactive voice-responsive system provides entertainment value and wow factor.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Interactive voice-responsive system
+                        provides entertainment value and wow factor.</p>
                 </div>
-                
-                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group" style="animation-delay: 0.4s;">
-                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🎨</div>
+
+                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group"
+                    style="animation-delay: 0.4s;">
+                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🎨
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Customization</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Select from 20 pre-programmed recipes or personalize drinks to your taste.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Select from 20 pre-programmed recipes or
+                        personalize drinks to your taste.</p>
                 </div>
-                
-                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group" style="animation-delay: 0.5s;">
-                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🌱</div>
+
+                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group"
+                    style="animation-delay: 0.5s;">
+                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🌱
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Eco-Friendly</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Precise portion control minimizes spillage and supports sustainable practices.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Precise portion control minimizes
+                        spillage and supports sustainable practices.</p>
                 </div>
-                
-                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group" style="animation-delay: 0.6s;">
-                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">♿</div>
+
+                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group"
+                    style="animation-delay: 0.6s;">
+                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">♿
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Inclusive Design</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Hands-free operation ensures accessibility for individuals with limited mobility.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Hands-free operation ensures
+                        accessibility for individuals with limited mobility.</p>
                 </div>
-                
-                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group" style="animation-delay: 0.7s;">
-                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🔧</div>
+
+                <div class="feature-card glass-card p-8 rounded-2xl text-center hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 group"
+                    style="animation-delay: 0.7s;">
+                    <div class="text-5xl mb-6 animate-float group-hover:scale-110 transition-transform duration-300">🔧
+                    </div>
                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Smart Automation</h3>
-                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Automatically measures, dispenses, and mixes for perfect mocktails every time.</p>
+                    <p class="text-gray-600 dark:text-gray-400 leading-relaxed">Automatically measures, dispenses, and
+                        mixes for perfect mocktails every time.</p>
                 </div>
             </div>
         </div>
@@ -359,94 +329,67 @@ animation: {
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="loader.js"></script>
     <script>
-        // Page Loader
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('pageLoader');
-            setTimeout(() => {
-                loader.classList.add('opacity-0', 'invisible');
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }, 1500);
+        // Theme Management
+        const html = document.documentElement;
+        const themeToggles = [document.getElementById('themeToggle'), document.getElementById('mobileThemeToggle')];
+
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') html.classList.add('dark');
+
+        themeToggles.forEach(btn => {
+            btn?.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+            });
         });
 
-        // Theme Toggle
-        let isDarkMode = localStorage.getItem('darkMode') === 'true' || false;
-
-        function initializeTheme() {
-            if (isDarkMode) {
-                document.documentElement.classList.add('dark');
-                document.documentElement.setAttribute('data-theme', 'dark');
-                updateThemeToggle();
-            }
-        }
-
-        function toggleTheme() {
-            isDarkMode = !isDarkMode;
-            if (isDarkMode) {
-                document.documentElement.classList.add('dark');
-                document.documentElement.setAttribute('data-theme', 'dark');
+        // Navigation Logic
+        const nav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
             } else {
-                document.documentElement.classList.remove('dark');
-                document.documentElement.removeAttribute('data-theme');
+                nav.classList.remove('py-2');
             }
-            localStorage.setItem('darkMode', isDarkMode);
-            updateThemeToggle();
-        }
+        });
 
-        function updateThemeToggle() {
-            const themeIcon = document.getElementById('themeIcon');
-            const themeText = document.getElementById('themeText');
-            
-            if (isDarkMode) {
-                themeIcon.textContent = '☀️';
-            } else {
-                themeIcon.textContent = '🌙';
-            }
-        }
+        // Reveal Animation on Scroll
+        const reveal = () => {
+            const reveals = document.querySelectorAll('.feature-card, .glass-card, .reveal');
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('active', 'animate-fade-in');
+                }
+            });
+        };
 
-        // Event Listeners
-        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
 
-        // Initialize theme on page load
-        initializeTheme();
-
-        // Smooth scrolling
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
-            });
-        }, observerOptions);
-
-        // Observe feature cards
-        document.addEventListener('DOMContentLoaded', function() {
-            const featureCards = document.querySelectorAll('.feature-card');
-            featureCards.forEach(card => {
-                observer.observe(card);
-            });
-        });
     </script>
 </body>
+
 </html>

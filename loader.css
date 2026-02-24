@@ -1,0 +1,111 @@
+/* Simple Advanced Loader */
+#premium-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #0f172a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#premium-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loader-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.loader-visual {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.loader-circle {
+    width: 100%;
+    height: 100%;
+    border: 3px solid rgba(14, 165, 233, 0.1);
+    border-radius: 50%;
+    position: relative;
+}
+
+.loader-progress-circle {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100px;
+    height: 100px;
+    fill: none;
+    stroke: #0ea5e9;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+    transform: rotate(-90deg);
+    transition: stroke-dashoffset 0.4s ease;
+}
+
+.loader-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: loader-pulse 2s infinite ease-in-out;
+}
+
+.loader-icon i {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loader-text-wrap {
+    text-align: center;
+    overflow: hidden;
+}
+
+.loader-brand {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: white;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #fff 20%, #0ea5e9 40%, #6366f1 60%, #fff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine-text 3s linear infinite;
+}
+
+@keyframes loader-pulse {
+
+    0%,
+    100% {
+        transform: scale(0.9);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+
+@keyframes shine-text {
+    to {
+        background-position: 200% center;
+    }
+}

@@ -1,220 +1,290 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Bio Nas | OUSL Agri Innovations Hub</title>
-  <meta name="description" content="Bio Nas - A natural detox beverage from pineapple peel extract. Antioxidant-rich, eco-innovative, and refreshing.">
+  <meta name="description"
+    content="Bio Nas - A natural detox beverage from pineapple peel extract. Antioxidant-rich, eco-innovative, and refreshing.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="icon" type="image/png" sizes="56x56" href="images/icon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Core Styles -->
+  <link rel="stylesheet" href="globals.css">
+  <link rel="stylesheet" href="loader.css">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            'primary': { 50: '#f0f9ff', 100: '#e0f2fe', 500: '#0ea5e9', 600: '#0284c7', 700: '#0369a1', 900: '#0c4a6e' },
-            'accent': { 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca' }
+            primary: '#0ea5e9',
+            secondary: '#6366f1',
           },
-          animation: {
-            'fade-in': 'fadeIn 0.6s ease-out',
-            'slide-up': 'slideUp 0.6s ease-out',
-            'float': 'float 6s ease-in-out infinite',
-            'pulse-slow': 'pulse 3s infinite'
-          },
-          keyframes: {
-            fadeIn: { '0%': {opacity: '0', transform: 'translateY(20px)'}, '100%': {opacity: '1', transform: 'translateY(0)'} },
-            slideUp: { '0%': {opacity: '0', transform: 'translateY(50px)'}, '100%': {opacity: '1', transform: 'translateY(0)'} },
-            float: { '0%,100%': {transform: 'translateY(0)'}, '50%': {transform: 'translateY(-20px)'} }
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
           }
         }
       }
     }
   </script>
+
   <style>
-    .gradient-text {
-      background: linear-gradient(45deg,#0ea5e9,#6366f1,#8b5cf6);
-      background-size:300% 300%;
-      -webkit-background-clip:text;
-      background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:gradient 3s ease infinite
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .glass-card {
-      background:rgba(255,255,255,0.1);
-      backdrop-filter:blur(16px);
-      border:1px solid rgba(255,255,255,0.2)
-    }
-    .dark .glass-card {
-      background:rgba(0,0,0,0.2);
-      border:1px solid rgba(255,255,255,0.1)
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-slate-900 transition-all duration-500">
 
-<!-- Page Loader -->
-<div id="pageLoader" class="fixed inset-0 bg-gray-500 flex flex-col items-center justify-center z-50 transition-all duration-500">
-    <div class="text-6xl font-black text-white gradient-text mb-6 animate-pulse">
-        Innova OUSL
+<body class="bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-x-hidden">
+
+  <!-- Navigation -->
+  <header class="fixed top-0 w-full z-50 transition-all duration-300 px-4 py-4" id="main-nav">
+    <div class="max-w-7xl mx-auto">
+      <nav class="premium-glass rounded-2xl md:rounded-full px-6 py-3 flex items-center justify-between shadow-lg">
+        <div class="flex items-center gap-4">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <div class="relative">
+              <img src="images/ousl-logo.png" alt="OUSL" class="h-10 w-auto object-contain">
+              <div
+                class="absolute -inset-2 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+              </div>
+            </div>
+            <div class="hidden sm:block border-l border-slate-300 dark:border-slate-700 h-8 mx-1"></div>
+            <img src="images/logo-black.png" alt="Innova" class="h-8 w-auto object-contain hidden sm:block dark:hidden">
+            <img src="images/innova-logo.png" alt="Innova" class="h-8 w-auto object-contain hidden dark:sm:block">
+            <div class="flex flex-col">
+              <span class="text-xl font-bold premium-gradient-text">INNOVA</span>
+              <span
+                class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-semibold leading-none">OUSL
+                Agri Hub</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html"
+            class="text-sm font-medium hover:text-primary transition-colors dark:text-slate-300">Home</a>
+          <a href="index.html#innovations"
+            class="text-sm font-medium hover:text-primary transition-colors dark:text-slate-300">Innovations</a>
+
+          <div class="h-4 w-px bg-slate-200 dark:bg-slate-800"></div>
+
+          <div id="themeToggle" class="theme-switch" aria-label="Toggle Theme">
+            <div class="theme-switch-thumb">
+              <i class="fas fa-sun dark:hidden"></i>
+              <i class="fas fa-moon hidden dark:inline"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <div class="flex items-center gap-4 md:hidden">
+          <div id="mobileThemeToggle" class="theme-switch" aria-label="Toggle Theme">
+            <div class="theme-switch-thumb">
+              <i class="fas fa-sun dark:hidden"></i>
+              <i class="fas fa-moon hidden dark:inline"></i>
+            </div>
+          </div>
+          <a href="index.html" class="p-2 text-xl" aria-label="Home">
+            <i class="fas fa-house"></i>
+          </a>
+        </div>
+      </nav>
     </div>
-    <div class="w-12 h-12 border-4 border-white/30 border-t-white rounded-full animate-spin mb-4"></div>
-    <div class="text-white text-lg opacity-80">Loading...</div>
-</div>
+  </header>
 
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex items-center justify-center relative">
+    <div class="container mx-auto px-4 text-center z-10 reveal">
+      <h1 class="text-6xl md:text-8xl font-black premium-gradient-text mb-6">Bio Nas</h1>
+      <p class="text-2xl md:text-3xl mb-4 text-gray-700 dark:text-gray-300">A Natural Detox Beverage</p>
+      <p class="text-lg max-w-2xl mx-auto mb-8 text-gray-600 dark:text-gray-400">
+        Made from pineapple peel extract, Bio Nas is rich in antioxidants, eco-innovative, sugar-free, and refreshingly
+        light.
+      </p>
+      <a href="#product-overview"
+        class="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
+        Discover More <i class="fas fa-arrow-right ml-2"></i>
+      </a>
+    </div>
+  </section>
 
-<!-- Navbar -->
-<nav class="fixed top-0 w-full z-40 glass-card">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6">
-    <div class="flex items-center justify-between h-16">
-      <div class="flex items-center space-x-4">
-        <img src="images/ousl-logo.png" alt="OUSL Logo" class="w-[200px] h-auto object-contain rounded-lg shadow-md">
-        <img src="images/innova-logo.png" alt="Innova Logo" class="w-[100px] h-auto object-contain rounded-lg shadow-md">
-        <div>
-          <h1 class="text-xl font-bold gradient-text">Bio Nas</h1>
-          <p class="text-xs text-gray-600 dark:text-gray-400">by The Open University of Sri Lanka</p>
+  <!-- Product Overview -->
+  <section id="product-overview" class="py-24 bg-white dark:bg-slate-900 transition-colors">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <h2 class="text-4xl font-bold mb-6 premium-gradient-text">Product Overview</h2>
+        <p class="mb-6 text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+          Bio Nas is a refreshing natural health drink from <b>pineapple peel extract</b>, enriched with bioactive
+          compounds such as phenolics and flavonoids.
+          With no added sugar, it offers a light, clean taste while promoting wellness and sustainability by valorizing
+          agricultural waste.
+        </p>
+      </div>
+      <div class="reveal">
+        <img src="images/bionas.jpg" alt="Bio Nas Drink"
+          class="rounded-3xl shadow-2xl w-full h-auto hover:rotate-2 transition-transform duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="py-24 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 reveal">Key Benefits</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="premium-glass p-8 rounded-2xl reveal">
+          <h3 class="text-xl font-bold mb-4 text-primary">Rich in antioxidants</h3>
+          <p class="text-slate-300">Contains 14.55 mg GAE phenolics & 5.82 mg QE flavonoids that combat oxidative
+            stress.</p>
+        </div>
+        <div class="premium-glass p-8 rounded-2xl reveal">
+          <h3 class="text-xl font-bold mb-4 text-primary">Supports wellness</h3>
+          <p class="text-slate-300">Boosts immunity and may reduce risk of chronic diseases.</p>
+        </div>
+        <div class="premium-glass p-8 rounded-2xl reveal">
+          <h3 class="text-xl font-bold mb-4 text-primary">No added sugar</h3>
+          <p class="text-slate-300">Perfect for health-conscious, low-calorie lifestyles.</p>
+        </div>
+        <div class="premium-glass p-8 rounded-2xl reveal">
+          <h3 class="text-xl font-bold mb-4 text-primary">Eco-innovative</h3>
+          <p class="text-slate-300">Utilizes pineapple peels, reducing food waste.</p>
+        </div>
+        <div class="premium-glass p-8 rounded-2xl reveal">
+          <h3 class="text-xl font-bold mb-4 text-primary">Light & refreshing</h3>
+          <p class="text-slate-300">Hydrating, pleasant for daily use.</p>
         </div>
       </div>
-      <div class="hidden md:flex space-x-8">
-          <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 font-medium">Home</a>
+    </div>
+  </section>
 
+  <!-- Label & Nutritional Info -->
+  <section id="label" class="py-24 bg-slate-50 dark:bg-slate-950 transition-colors">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16 reveal premium-gradient-text">Label & Nutritional Info</h2>
+      <div class="grid md:grid-cols-2 gap-12 bg-white dark:bg-slate-900 p-8 md:p-12 rounded-3xl shadow-xl reveal">
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-slate-800 dark:text-white">Ingredients</h3>
+          <ul class="space-y-4 text-slate-600 dark:text-slate-400">
+            <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Pineapple Peel Extract – 100
+              µL</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Water – 100 mL</li>
+            <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> No sugar added</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-6 text-slate-800 dark:text-white">Nutritional Data (per 100 mL)</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+              <span class="text-slate-500">Phenolic</span>
+              <span class="font-bold text-primary">14.55 mg GAE</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+              <span class="text-slate-500">Flavonoid</span>
+              <span class="font-bold text-primary">5.82 mg QE</span>
+            </div>
+            <div class="grid grid-cols-2 gap-4 pt-4">
+              <div class="text-sm text-slate-500">Energy: ~0 kcal</div>
+              <div class="text-sm text-slate-500">Carbs: ≤0.01 g</div>
+              <div class="text-sm text-slate-500">Protein: 0 g</div>
+              <div class="text-sm text-slate-500">Fat: 0 g</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
+  </section>
 
-<!-- Theme Toggle -->
-<button id="themeToggle" class="fixed top-4 right-4 z-50 glass-card px-4 py-2 rounded-full">🌙</button>
-
-<!-- Hero -->
-<section id="home" class="min-h-screen flex items-center justify-center relative">
-  <div class="container mx-auto px-4 text-center z-10 animate-fade-in">
-    <h1 class="text-6xl md:text-8xl font-black gradient-text mb-6">Bio Nas</h1>
-    <p class="text-2xl md:text-3xl mb-4 text-gray-700 dark:text-gray-300">A Natural Detox Beverage</p>
-    <p class="text-lg max-w-2xl mx-auto mb-8 text-gray-600 dark:text-gray-400">
-      Made from pineapple peel extract, Bio Nas is rich in antioxidants, eco-innovative, sugar-free, and refreshingly light.
-    </p>
-    <a href="#product-overview" class="inline-block bg-gradient-to-r from-green-500 to-emerald-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300">
-      Discover More <i class="fas fa-arrow-right ml-2"></i>
-    </a>
-  </div>
-</section>
-
-<!-- Product Overview -->
-<section id="product-overview" class="py-16 bg-gray-50 dark:bg-gray-900">
-  <div class="container mx-auto px-6 lg:px-20 flex flex-col lg:flex-row items-center gap-12">
-    <div class="lg:w-1/2">
-      <h2 class="text-4xl font-bold mb-6">Product Overview</h2>
-      <p class="mb-4 text-gray-700 dark:text-gray-300">
-        Bio Nas is a refreshing natural health drink from <b>pineapple peel extract</b>, enriched with bioactive compounds such as phenolics and flavonoids. 
-        With no added sugar, it offers a light, clean taste while promoting wellness and sustainability by valorizing agricultural waste.
-      </p>
-    </div>
-    <div class="lg:w-1/2 flex justify-center">
-      <img src="images/bionas.jpg" alt="Bio Nas Drink" class="rounded-3xl shadow-2xl w-full max-w-md">
-    </div>
-  </div>
-</section>
-
-<!-- Benefits -->
-<section id="benefits" class="py-16 bg-gray-800 text-white">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12">Key Benefits</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="glass-card p-6 rounded-xl">Rich in antioxidants – Contains 14.55 mg GAE phenolics & 5.82 mg QE flavonoids that combat oxidative stress.</div>
-      <div class="glass-card p-6 rounded-xl">Supports wellness – Boosts immunity and may reduce risk of chronic diseases.</div>
-      <div class="glass-card p-6 rounded-xl">No added sugar – Perfect for health-conscious, low-calorie lifestyles.</div>
-      <div class="glass-card p-6 rounded-xl">Eco-innovative – Utilizes pineapple peels, reducing food waste.</div>
-      <div class="glass-card p-6 rounded-xl">Light & refreshing – Hydrating, pleasant for daily use.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Advantages -->
-<section id="advantages" class="py-16 bg-gray-900 text-white">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12">Advantages</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <div class="glass-card p-6 rounded-xl">Affordable functional beverage made from locally available pineapple peels.</div>
-      <div class="glass-card p-6 rounded-xl">Promotes sustainable agriculture & use of fruit by-products.</div>
-      <div class="glass-card p-6 rounded-xl">Naturally free from artificial colors, preservatives & sweeteners.</div>
-      <div class="glass-card p-6 rounded-xl">Appeals to health-conscious and eco-friendly consumers alike.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Label Section -->
-<section id="label" class="py-16 bg-gray-50 dark:bg-gray-800">
-  <div class="container mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">Label & Nutritional Info</h2>
-    <div class="grid md:grid-cols-2 gap-12">
-      <!-- Ingredients -->
-      <div>
-        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Ingredients</h3>
-        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-2">
-          <li>Pineapple Peel Extract – 100 µL</li>
-          <li>Water – 100 mL</li>
-          <li>No sugar added</li>
-        </ul>
-      </div>
-      <!-- Nutrition -->
-      <div>
-        <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Nutritional Data (per 100 mL)</h3>
-        <p class="text-gray-700 dark:text-gray-300">
-          Phenolic: <span class="text-primary-600 dark:text-primary-400 font-semibold">14.55 mg GAE</span> | 
-          Flavonoid: <span class="text-primary-600 dark:text-primary-400 font-semibold">5.82 mg QE</span>
-        </p>
-        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-2">
-          <li>Energy: ~0 kcal</li>
-          <li>Carbohydrates: ≤0.01 g</li>
-          <li>Sugars: ≤0.01 g</li>
-          <li>Protein: 0 g</li>
-          <li>Fat: 0 g</li>
-          <li>Dietary fiber: 0 g</li>
-          <li>Salt: 0 mg</li>
-        </ul>
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold premium-gradient-text mb-4">Bio Nas</h3>
+      <p class="text-slate-400 max-w-md mx-auto mb-8">A refreshing detox drink — natural, sustainable, and
+        antioxidant-rich.</p>
+      <div class="border-t border-slate-800 pt-8">
+        <p class="text-slate-500 text-sm">&copy; 2025 Innova Department of Agricultural & Plantation Engineering OUSL.
+          All rights reserved.</p>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Footer -->
-<footer id="contact" class="bg-gray-800 text-white py-12">
-  <div class="container mx-auto text-center">
-    <h3 class="text-2xl font-bold gradient-text mb-2">Bio Nas</h3>
-    <p class="text-gray-400 mb-4">A refreshing detox drink — natural, sustainable, and antioxidant-rich.</p>
-    <div class="border-t border-gray-700 pt-8">
-      <p class="text-gray-400">&copy; 2025 Innova Department of Agricultural & Plantation Engineering OUSL. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+  <!-- Scripts -->
+  <script src="loader.js"></script>
+  <script>
+    // Theme Management
+    const html = document.documentElement;
+    const themeToggles = [document.getElementById('themeToggle'), document.getElementById('mobileThemeToggle')];
 
-<script>
-// Loader
-window.addEventListener('load',()=>{
-  setTimeout(()=>{
-    pageLoader.classList.add('opacity-0','invisible');
-    setTimeout(()=>pageLoader.style.display='none',500)
-  },1500)
-});
-// Theme toggle
-let dark=localStorage.getItem('darkMode')==='true';
-function applyTheme(){
-  document.documentElement.classList.toggle('dark',dark);
-  themeToggle.textContent=dark?'☀️':'🌙'
-}
-themeToggle.onclick=()=>{
-  dark=!dark;
-  localStorage.setItem('darkMode',dark);
-  applyTheme();
-}
-applyTheme();
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-  e.preventDefault();
-  document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})
-}));
-</script>
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') html.classList.add('dark');
+
+    themeToggles.forEach(btn => {
+      btn?.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      });
+    });
+
+    // Navigation Logic
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('py-2');
+      } else {
+        nav.classList.remove('py-2');
+      }
+    });
+
+    // Reveal Animation on Scroll
+    const reveal = () => {
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          el.classList.add('active');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 100;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
